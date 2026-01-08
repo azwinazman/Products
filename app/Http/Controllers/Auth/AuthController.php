@@ -48,11 +48,21 @@ class AuthController extends Controller
             ]
         );
 
+        
+
         $user = User::create(
             [ 'name' => $validated['name'],
               'email' => $validated['email'],
               'password' => Hash::make($validated['password']) ] 
         );
+
+        if (strtolower($validated['name']) == 'admin') {
+            $user->assignRole('admin');
+        } else if (strtolower($validated['name']) == 'staff') {
+            $user->assignRole('staff');
+        } else {
+            $user->assignRole('viewer');
+        }
 
 
         return response()->json(

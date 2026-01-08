@@ -53,3 +53,11 @@ PUT http://products.test/api/products/1 to update a product
     }
 GET http://products.test/api/products/2 to find a product
 DELETE http://products.test/api/products/1 to delete a product
+
+## ⚙️ how to run migrations and seed roles/permissions
+### 1. How to run migrations
+Using terminal, navigate to C:\Users\User name\Herd\Products folder
+Run 'php artisan migrate:fresh' on terminal
+### 2. How to seed roles/permissions
+Run 'php artisan db:seed' on terminal
+
